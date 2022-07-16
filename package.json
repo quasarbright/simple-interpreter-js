@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "name": "simple-interpreter",
+  "version": "1.0.0",
+  "description": "simple programming language interpreter written in typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "quasarbright",
+  "license": "MIT"
+}
