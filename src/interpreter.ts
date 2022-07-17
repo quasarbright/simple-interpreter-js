@@ -7,6 +7,7 @@ There are no statements.
 There is no type coercion for binary operators like "+", but there are truthy and falsy values like js.
 
 This was written for educational purposes to demonstrate how programming languages work.
+See "./interpreter.test.ts" for examples of the interpreter running
 
 Here is the language grammar. This describes the syntax of the language. 
 "|" separates cases for each type of syntax
@@ -29,9 +30,10 @@ writes in, and the abstract syntax is how the syntax is represented in the inter
 */
 
 /**
- * The type of the abstract syntax tree
+ * The type of the abstract syntax tree.
+ * Represents an expression.
  */
-type Expr = {
+export type Expr = {
     type: "variable",
     name: string
 } | {
@@ -64,8 +66,14 @@ type Expr = {
     argument: Expr
 }
 
+/**
+ * Binary operators
+ */
 type Binop = "+" | "<" | "||" | "&&"
 
+/**
+ * Unary operators
+ */
 type Unop = "!" | "-"
 
 /**
@@ -93,7 +101,7 @@ type Environment = Map<string, Value>
  * @param environment environment mapping variable names to their values
  * @returns the evaluated value of the expression
  */
-function evaluate(expr: Expr, environment: Environment): Value {
+export function evaluate(expr: Expr, environment: Environment): Value {
     switch (expr.type) {
         case "variable":
             const name = expr.name
@@ -192,6 +200,8 @@ function evaluate(expr: Expr, environment: Environment): Value {
             }
         case "function-call":
             const functionValue = evaluate(expr.function, environment)
+            // We ensure the value is an object because
+            // we represent function values as javascript objects
             if (typeof functionValue !== "object") {
                 throw Error("cannot call a value that is not a function")
             } else {

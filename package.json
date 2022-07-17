@@ -1,5 +1,8 @@
 {
   "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.7",
     "typescript": "^4.7.4"
   },
   "name": "simple-interpreter",
@@ -7,7 +10,8 @@
   "description": "simple programming language interpreter written in typescript",
   "main": "index.ts",
   "scripts": {
-    "test": "npm test"
+    "compile": "tsc",
+    "test": "jest --env=node --colors --coverage test"
   },
   "author": "quasarbright",
   "license": "MIT"
