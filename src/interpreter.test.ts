@@ -3,7 +3,8 @@ import { evaluate, Expr } from "./interpreter"
 /*
 Here are some tests that demonstrate how the language works.
 
-to build expressions more easily, I created helpers that are below the test suite.
+To build expressions more easily, I created helpers that are below the test suite.
+This is necessary because I didn't implement a parser.
 */
 
 describe(evaluate.name, () => {

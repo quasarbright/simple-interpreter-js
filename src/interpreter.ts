@@ -1,13 +1,13 @@
 
 /*
-This is an interpreter for a subset of javascript. It will support numbers, booleans,
-arithmetic, comparison, and logical operations, conditionals, and functions. Everything is an expression.
+This is an interpreter for a subset of javascript. It supports numbers, booleans,
+arithmetic, comparison, logical operations, conditionals, and functions. Everything is an expression.
 There are no statements.
 
 There is no type coercion for binary operators like "+", but there are truthy and falsy values like js.
 
-This was written for educational purposes to demonstrate how programming languages work.
-See "./interpreter.test.ts" for examples of the interpreter running
+This was written to demonstrate how programming languages work.
+See "./interpreter.test.ts" for examples of running programs.
 
 Here is the language grammar. This describes the syntax of the language. 
 "|" separates cases for each type of syntax

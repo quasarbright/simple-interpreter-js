@@ -8,7 +8,6 @@
   "name": "simple-interpreter",
   "version": "1.0.0",
   "description": "simple programming language interpreter written in typescript",
-  "main": "index.ts",
   "scripts": {
     "compile": "tsc",
     "test": "jest --env=node --colors --coverage test"
